@@ -1,0 +1,14 @@
+package com.college.campuscollab.repository;
+
+import com.college.campuscollab.entity.Project;
+import com.college.campuscollab.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProjectRepository extends JpaRepository<Project, Long> {
+
+    List<Project> findByOwner(User owner);
+
+    List<Project> findByStatus(String status);
+}
